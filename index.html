@@ -1,0 +1,228 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cake Desire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f2;
+      color: #4b2e2e;
+    }
+    header {
+      background: #f8d3dc;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    #tagline.typing {
+      font-size: 1.2rem;
+      border-right: 2px solid #4b2e2e;
+      white-space: nowrap;
+      overflow: hidden;
+      width: fit-content;
+      margin: auto;
+      animation: blink 0.7s step-end infinite;
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #4b2e2e; }
+    }
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #4b2e2e;
+      font-weight: bold;
+    }
+    .section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #f8d3dc;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      padding: 0.75rem;
+      background-color: #e89cae;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Cake Desire</h1>
+    <p id="tagline" class="typing"></p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="section">
+    <h2>About Sakshi Shah</h2>
+    <p>Founded by Sakshi Shah, The Cake Desire is a home-based luxury bakery in Vadodara specializing in handcrafted cakes, cupcakes, and donuts. Each creation is baked with love, rooted in tradition, and designed to make your special moments sweeter.</p>
+  </section>
+
+  <section id="gallery" class="section">
+    <h2>Our Creations</h2>
+    <div class="gallery">
+      <img src="Engagement.png.jpg" alt="Engagement Cake">
+      <img src="Oreo.png.jpg" alt="Oreo Cake">
+      <img src="Princess.png.jpg" alt="Princess Birthday Cake">
+      <img src="Donuts.png.jpg" alt="Chocolate Donuts">
+      <img src="Cupcakes.png.jpg" alt="Cupcakes">
+    </div>
+  </section>
+
+  <section id="order" class="section">
+    <h2>How to Order</h2>
+    <p>To place an order, simply contact us on WhatsApp with your request. We’ll help you pick the right flavor, size, and design for your special event.</p>
+    <p><strong>📍 Vadodara</strong> | <strong>📞 WhatsApp: 98765 43210</strong></p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section" id="instagram">
+    <h2>Follow Us on Instagram</h2>
+    <p>See our latest cakes and creations! 🍩🎂</p>
+    <p>
+      <a href="https://www.instagram.com/the_cake_desire_s" target="_blank" style="color: #e89cae; font-weight: bold;">
+        👉 @the_cake_desire_s
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 The Cake Desire | Designed with love in Vadodara 🍰
+  </footer>
+
+  <script>
+    const text = "A Taste of Elegance in Every Bite";
+    let i = 0;
+    const speed = 70;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("tagline").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: #8b4b3a;
+    height: 24px;
+    margin-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #8b4b3a;
+    animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+</style>
+<header>
+  <img src="Logo.png.jpg" alt="The Cake Desire Logo" class="logo" />
+  <div class="brand-text">
+    <h1>The Cake Desire</h1>
+    <div class="tagline">A Luxurious Cake Boutique</div>
+  </div>
+</header>
