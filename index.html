@@ -94,6 +94,21 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    .gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* Active state when visible */
+.gallery img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   </style>
 </head>
 <body>
@@ -120,15 +135,16 @@
       <img src="Engagement.png.jpg" alt="Engagement Cake">
       <img src="Oreo.png.jpg" alt="Oreo Cake">
       <img src="Princess.png.jpg" alt="Princess Birthday Cake">
-      <img src="Donuts.png.jpg" alt="Chocolate Donuts">
-      <img src="Cupcakes.png.jpg" alt="Cupcakes">
+      <img src="Cupcakes.png.jpg" alt="Chocolate Donuts">
+      <img src="Donuts.png.jpg" alt="Cupcakes">
+      <img src="cake 4.jpg" alt="Cupcakes">
     </div>
   </section>
 
   <section id="order" class="section">
     <h2>How to Order</h2>
     <p>To place an order, simply contact us on WhatsApp with your request. We’ll help you pick the right flavor, size, and design for your special event.</p>
-    <p><strong>📍 Vadodara</strong> | <strong>📞 WhatsApp: 98765 43210</strong></p>
+    <p><strong>📍 Vadodara</strong> | <strong>📞 WhatsApp: 8320207059</strong></p>
   </section>
 
   <section id="contact" class="section">
@@ -158,7 +174,7 @@
   <script>
     const text = "A Taste of Elegance in Every Bite";
     let i = 0;
-    const speed = 70;
+    const speed = 120;
     function typeWriter() {
       if (i < text.length) {
         document.getElementById("tagline").innerHTML += text.charAt(i);
@@ -168,6 +184,20 @@
     }
     window.onload = typeWriter;
   </script>
+  <script>
+    // Smooth scroll on clicking navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1); // remove the '#'
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  
 </body>
 </html>
 <style>
@@ -226,3 +256,54 @@
     <div class="tagline">A Luxurious Cake Boutique</div>
   </div>
 </header>
+<section id="stats" class="section" style="text-align: center;">
+  <h2>Our Journey</h2>
+  <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem;">
+    <div>
+      <h3 id="cakesMade">0</h3>
+      <p>Cakes Made</p>
+    </div>
+    <div>
+      <h3 id="yearsExperience">0</h3>
+      <p>Years of Experience</p>
+    </div>
+  </div>
+</section>
+<script>
+  // Fade-in on scroll for gallery images
+const images = document.querySelectorAll('.gallery img');
+
+function checkImages() {
+  const triggerBottom = window.innerHeight * 0.9;
+  
+  images.forEach(img => {
+    const imgTop = img.getBoundingClientRect().top;
+    if(imgTop < triggerBottom) {
+      img.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkImages);
+window.addEventListener('load', checkImages);
+
+  function animateCounter(id, target) {
+    let count = 0;
+    const speed = target / 100; // Adjust speed here
+    const counter = document.getElementById(id);
+    const interval = setInterval(() => {
+      if (count < target) {
+        count++;
+        counter.textContent = count;
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
+  }
+
+  window.onload = function() {
+    animateCounter("cakesMade", 600); // 600+ Cakes
+    animateCounter("yearsExperience", 4); // 4+ Years
+    typeWriter(); // Your original tagline animation
+  };
+</script>
